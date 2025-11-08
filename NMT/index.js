@@ -80,6 +80,7 @@ let daveIndex = 0;//Current Index of Crazy Dave Dialogue
 let clickCooldown = 0; //Will prevent clicks from happening to often (1/6 of second) 
 let rentSlot = false;//Determines if Seed Slot is Being Rented
 let unlockedPackets = [1, 4, 7, 12, 18];
+let autoCollect = false;
 
 let unlockedLevels = [
   "l1"
@@ -590,7 +591,24 @@ function levelMainloop() {
     conveyorTimer += levelSpeed;
     globalTimer += levelSpeed;
     //Collect Collectibles (Sun and Coins)
-    if (mouseIsPressed === true) {
+    if(autoCollect){
+      for (let a = 0; a < allCollectibles.length; a++) {
+        let currentCollectible = allCollectibles[a];
+        if (!currentCollectible.falling&&!allCollectibles[a].trigger) {
+          if (currentCollectible.type === 1) {//Sun
+            sun += currentCollectible.value;
+          } else {//Coin
+            money += currentCollectible.value;
+          }
+          allCollectibles[a].trigger = true;
+        }
+        if (allCollectibles[a].remove) {//Delete Collectible
+          allEntities.splice(allEntities.indexOf(currentCollectible), 1);
+          allCollectibles.splice(a, 1);
+          a--;
+        }
+      }
+    }else if (mouseIsPressed === true) {
       for (let a = 0; a < allCollectibles.length; a++) {
         let currentCollectible = allCollectibles[a];
         if ((pointBox(mouseX, mouseY, currentCollectible.x - 25, currentCollectible.y - 25, 50, 50)) && (mouseY < currentCollectible.y + 25) && (!allCollectibles[a].trigger)) {

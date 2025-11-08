@@ -101,6 +101,8 @@ class Collectible extends Entity{
     }
     if ((this.falling === true)&&(this.y < this.max)){
       this.y += 1.2 * levelSpeed;
+    } else {
+      this.falling=false
     }
   }
 
