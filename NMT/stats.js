@@ -1359,25 +1359,25 @@ const plantStat = [
     },
     t2:{
       sun: 100,
-      recharge: 720,
-      startingRecharge: 450,
+      recharge: 600, // Changed (12->10)
+      startingRecharge: 180, // Changed (7.5->3)
       health: 450,
       eatable: true,
       damage: 75,
       splashDamage: 0,
-      reload: 1740,
+      reload: 1800, // Changed
       projectile: 0
     }
   },
   {//2 Twin Sunflower
     type: 2,
     name: "Twin Sunflower",
-    description: "Produces 2 sun every 30 seconds, Damage denotes sun produced per sun",
+    description: "Produces 2 sun every 30 seconds, Damage denotes sun value per sun",
     packet:3,
     t1:{
       sun: 150,
       recharge: 600, // Changed (15->10)
-      startingRecharge: 300, // Changed
+      startingRecharge: 300, // Changed (12->5)
       health: 450,
       eatable: true,
       damage: 50,
@@ -1386,14 +1386,14 @@ const plantStat = [
       projectile: 0
     },
     t2:{
-      sun: 300,
-      recharge: 1200,
-      startingRecharge: 1200,
-      health: 900,
+      sun: 275, // Changed
+      recharge: 900, // Changed (20 -> 15)
+      startingRecharge: 900, // Changed (20 -> 15)
+      health: 600, // Changed
       eatable: true,
       damage: 75,
       splashDamage: 0,
-      reload: 1740,
+      reload: 1800, // Changed
       projectile: 0
     }
   },
@@ -1516,8 +1516,8 @@ const plantStat = [
     packet:1,
     t1:{
       sun: 200, // Changed
-      recharge: 3000, // Changed (40->50)
-      startingRecharge: 3000,
+      recharge: 3300, // Changed (40->55)
+      startingRecharge: 3300, // Changed (40->55)
       health: 100000,
       eatable: false,
       damage: 1800,
@@ -1526,9 +1526,9 @@ const plantStat = [
       projectile: 0
     },
     t2:{
-      sun: 200,
-      recharge: 1500,
-      startingRecharge: 1500,
+      sun: 175, // Changed
+      recharge: 2100, //Changed (25->35)
+      startingRecharge: 2100, // Changed (25->35)
       health: 100000,
       eatable: false,
       damage: 900,
@@ -1657,7 +1657,7 @@ const plantStat = [
     t1:{
       sun: 50,
       recharge: 1200,
-      startingRecharge: 600,
+      startingRecharge: 300, // Changed (10 -> 5)
       health: 4000,
       eatable: true,
       damage: 0,
@@ -1668,7 +1668,7 @@ const plantStat = [
     t2:{
       sun: 100,
       recharge: 720,
-      startingRecharge: 300,
+      startingRecharge: 0, // Changed (5 -> 0)
       health: 3000,
       eatable: true,
       damage: 0,
@@ -1680,12 +1680,12 @@ const plantStat = [
   {//13 Explode-O-Nut
     type: 13,
     name: "Explode-O-Nut",
-    description: "Wall-nut that blows up when killed",
+    description: "Wall-nut that blows up when killed (Shoveling will cause an immediate explosion)",
     packet:7,
     t1:{
-      sun: 75,
-      recharge: 1500,
-      startingRecharge: 1500,
+      sun: 100, // Changed (75 -> 100)
+      recharge: 2100, // Changed (25 -> 35)
+      startingRecharge: 2100, // Changed (25 -> 35)
       health: 2000,
       eatable: true,
       damage: 600,
@@ -1695,8 +1695,8 @@ const plantStat = [
     },
     t2:{
       sun: 200,
-      recharge: 1800,
-      startingRecharge: 1800,
+      recharge: 2700, // Changed (30 -> 45)
+      startingRecharge: 2700, // Changed (30 -> 45)
       health: 2000,
       eatable: true,
       damage: 1500,
@@ -1796,8 +1796,8 @@ const plantStat = [
     packet:5,
     t1:{
       sun: 100,
-      recharge: 2700,
-      startingRecharge: 900, // Changed
+      recharge: 3000, // Changed (45 -> 50)
+      startingRecharge: 900, // Changed (10 -> 15)
       health: 300,
       eatable: true,
       damage: 50, // Changed
@@ -1805,13 +1805,13 @@ const plantStat = [
       reload: 90,
       projectile: 2
     },
-    t2:{
-      sun: 225,
-      recharge: 3600,
-      startingRecharge: 600,
-      health: 450,
+    t2:{ // Changed: Everything
+      sun: 150,
+      recharge: 2100,
+      startingRecharge: 0,
+      health: 300,
       eatable: true,
-      damage: 100,
+      damage: 50,
       splashDamage: 0,
       reload: 90,
       projectile: 2 //Red Stinger Bullet
