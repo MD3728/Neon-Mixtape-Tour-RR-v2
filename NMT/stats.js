@@ -438,34 +438,34 @@ const levels = {
     ],
     reward:[[1,500], [2,"l18"]]
   },
-  "l18": {//Level 18 Massive Attack 5 Flag
+  "l18": {//Level 18 Massive Attack 5 Flag (Changed)
     type: [2],
     daveSpeech: ["A large horde of \nzombies is approaching", "Now go deal with them"],
     flag: [false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true],
     jams:[0,0,0,0,2,2,2,2,2,4,2,4,3,3,3,3,1,1,1,2,6,6,4,4,4], 
     waveDelay: [120,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200],
-    conveyorProbability: [//Format: [Plant Type, Tier, Probability (Out of 100)], Starts at wave 0
-      [180,[[16,1,50],[19,1,50]]],
+    conveyorProbability: [//Format: [Plant Type, Tier, Probability (Out of 100)], Starts at wave 0 (Changed)
       [180,[[16,1,50],[19,1,50]]],
       [180,[[16,1,50],[19,1,50]]],
       [240,[[16,1,50],[19,1,50]]],
+      [240,[[16,1,50],[19,1,50]]],
       [240,[[18,1,30],[22,1,30],[12,1,20],[4,1,30]]],
-      [180,[[18,1,30],[22,1,30],[12,1,20],[4,1,30]]],
-      [180,[[18,1,30],[22,1,30],[12,1,20],[4,1,30]]],
-      [240,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
-      [240,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
-      [240,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
-      [240,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
+      [240,[[18,1,30],[22,1,30],[12,1,20],[4,1,30]]],
+      [240,[[18,1,30],[22,1,30],[12,1,20],[4,1,30]]],
+      [300,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
+      [300,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
+      [300,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
+      [300,[[15,1,30],[23,1,30],[12,1,20],[4,1,20]]],
       [240,[[20,1,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[20,1,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[20,1,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
-      [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]], // Changed
       [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
       [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
-      [240,[[25,1,15],[10,2,50],[12,1,30],[7,1,5]]], // Changed
+      [240,[[19,2,30],[10,1,10],[12,1,40],[10,1,15],[7,1,5]]],
+      [240,[[25,1,15],[10,2,50],[12,1,30],[7,1,5]]],
       [240,[[25,1,15],[10,2,50],[12,1,30],[7,1,5]]],
       [240,[[25,1,15],[10,2,50],[12,1,30],[7,1,5]]],
       [240,[[25,1,15],[10,2,50],[12,1,30],[7,1,5]]],
@@ -905,8 +905,8 @@ const levels = {
     flag: [false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true,false,false,false,false,true],
     jams: [8,8,0,0,8,8,0,0,8,8,0,0,8,8,0,0,8,8,0,0,8,8,0,0,8,8,0,0,8,8,0,0,8,0,8,8],
     waveDelay: [1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200],
-    startingSun: 2000,
-    fogLine: 840,//Starting X-Coordinate of Fog
+    startingSun: 2500,
+    fogLine: 880,//Starting X-Coordinate of Fog
     waves:[
       [[15,0], [1,3]], 
       [[0,1], [11,3], [21,0]], 
@@ -1350,7 +1350,7 @@ const plantStat = [
       sun: 50,
       recharge: 420, // Changed (9->7)
       startingRecharge: 0,
-      health: 450,
+      health: 300, // Changed
       eatable: true,
       damage: 50,
       splashDamage: 0,
@@ -1680,7 +1680,7 @@ const plantStat = [
   {//13 Explode-O-Nut
     type: 13,
     name: "Explode-O-Nut",
-    description: "Wall-nut that blows up when killed (Shoveling will cause an immediate explosion)",
+    description: "Wall-nut that blows up when killed (Shoveling causes an immediate explosion)",
     packet:7,
     t1:{
       sun: 100, // Changed (75 -> 100)
@@ -1891,8 +1891,8 @@ const plantStat = [
     },
     t2:{
       sun: 650,
-      recharge: 1200,
-      startingRecharge: 1200,
+      recharge: 600, // Changed
+      startingRecharge: 600, // Changed
       health: 600,
       eatable: true,
       damage: 600,
@@ -2134,9 +2134,9 @@ const plantStat = [
       sun: 100,
       recharge: 300,
       startingRecharge: 300,
-      health: 500,
+      health: 8000,
       eatable: false,
-      damage: 20,
+      damage: 30, // Changed
       splashDamage: 0,
       reload: 70,
       projectile: 0
@@ -2147,7 +2147,7 @@ const plantStat = [
       startingRecharge: 600,
       health: 8000,
       eatable: false,
-      damage: 40,
+      damage: 60, // Changed
       splashDamage: 0,
       reload: 70,
       projectile: 0
