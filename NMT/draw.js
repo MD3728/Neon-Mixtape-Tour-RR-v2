@@ -282,9 +282,9 @@ function drawStack(){
   drawJams();
   drawPlants();
   drawZombies();
+  drawLawnmowers();
   drawConveyor();
   drawProjectiles();
-  drawLawnmowers();
   drawParticles();
   drawSeedPackets();
   drawSun();
@@ -299,10 +299,10 @@ function backgroundDrawStack(){
   drawBackground();
   drawTiles();
   drawBoss();
+  drawLawnmowers();
   drawConveyor();
   drawPlants();
   drawZombies();
-  drawLawnmowers();
   //drawSeedPackets(); Done after dark filter
   drawSun();
   drawObjectives();
@@ -444,7 +444,7 @@ function drawObjectives(){
     fill("rgba(0,0,0,0.3)");//Night Overlay
     rect(0,0,950,700);
     if (currentJam !== 8){//Not Ultimate Jam, Draw Fog
-      image(graphics.minor[8],currentLevel["fogLine"]-30,50,800,600);
+      image(graphics.minor[8],currentLevel["fogLine"]-60,50,800,600);
     }
   }
 }
@@ -646,15 +646,21 @@ function drawLawnmowers(){
       currentMower.x += 3*levelSpeed;
     }
     noStroke(0);
+    translate(-30,0);
     fill(80,160,160);
-    rect(currentMower.x, currentMower.y+42, 36, 16);
-    fill(60);
-    ellipse(currentMower.x+10, currentMower.y+58,8,8);
-    ellipse(currentMower.x+26, currentMower.y+58,8,8);
-    ellipse(currentMower.x+18, currentMower.y+44, 20, 6);
-    rect(currentMower.x-5, currentMower.y+40,2,12);
-    quad(currentMower.x-3,currentMower.y+40,currentMower.x,currentMower.y+43,currentMower.x,currentMower.y+45,currentMower.x-3,currentMower.y+42);
-    quad(currentMower.x-3,currentMower.y+50,currentMower.x,currentMower.y+53,currentMower.x,currentMower.y+55,currentMower.x-3,currentMower.y+52);
+    rect(currentMower.x, currentMower.y+24, 64, 32); // Mower body
+    fill(0);
+    ellipse(currentMower.x+16, currentMower.y+54,16,16);
+    ellipse(currentMower.x+48, currentMower.y+54,16,16);
+    ellipse(currentMower.x+32, currentMower.y+28,32,16);
+    rect(currentMower.x-16, currentMower.y+16, 5, 32); // Handle
+    stroke(0);
+    strokeWeight(5);
+    line(currentMower.x-12, currentMower.y+24, currentMower.x,  currentMower.y+32);
+    line(currentMower.x-12, currentMower.y+40, currentMower.x,  currentMower.y+48);
+
+    translate(30,0);
+    noStroke(0);
   }
 }
 

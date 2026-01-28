@@ -58,33 +58,34 @@ function setupGraphics() {
     }
     graphics.minor[a].fill(213, 88, 102)
     for (let b = 0; b < 5; b++) {
-      graphics.minor[a].rotate(72)
-      graphics.minor[a].beginShape()
-      graphics.minor[a].vertex(0, 0)
-      graphics.minor[a].bezierVertex(-7, -10, -7, -20, 0, -30)
-      graphics.minor[a].bezierVertex(7, -20, 7, -10, 0, 0)
-      graphics.minor[a].endShape()
+      graphics.minor[a].rotate(72);
+      graphics.minor[a].beginShape();
+      graphics.minor[a].vertex(0, 0);
+      graphics.minor[a].bezierVertex(-7, -10, -7, -20, 0, -30);
+      graphics.minor[a].bezierVertex(7, -20, 7, -10, 0, 0);
+      graphics.minor[a].endShape();
     }
-    graphics.minor[a].fill(255, 161, 161)
-    graphics.minor[a].ellipse(0, 0, 4, 4)
+    graphics.minor[a].fill(255, 161, 161);
+    graphics.minor[a].ellipse(0, 0, 4, 4);
   }
-  graphics.minor.push(createGraphics(200, 200))
-  setupLayer(graphics.minor[7])
-  graphics.minor[7].translate(100, 100)
-  graphics.minor[7].noStroke()
+  graphics.minor.push(createGraphics(200, 200));
+  setupLayer(graphics.minor[7]);
+  graphics.minor[7].translate(100, 100);
+  graphics.minor[7].noStroke();
   for (let a = 9; a >= 0; a--) {
     for (let b = 0; b < 24; b++) {
-      graphics.minor[7].fill(random(200, 260), this.fade)
-      graphics.minor[7].arc(0, 0, a * 10 + 10, a * 10 + 10, b * 15, b * 15 + 15)
+      graphics.minor[7].fill(random(200, 260), this.fade);
+      graphics.minor[7].arc(0, 0, a * 10 + 10, a * 10 + 10, b * 15, b * 15 + 15);
     }
   }
-  graphics.minor.push(createGraphics(1100, 900))
-  setupLayer(graphics.minor[8])
-  graphics.minor[8].fill(160, 0.6)
-  graphics.minor[8].noStroke()
-  for (let a = 0; a < 17; a++) {
-    for (let b = 0; b < 16; b++) {
-      graphics.minor[8].ellipse(a * 50 + random(90, 110), b * 50 + random(90, 110), random(120, 160))
+  // Fog 1 time creation
+  graphics.minor.push(createGraphics(800, 600));
+  setupLayer(graphics.minor[8]);
+  graphics.minor[8].fill(160, 0.8);
+  graphics.minor[8].noStroke();
+  for (let a = 0; a < 7; a++) {
+    for (let b = 0; b < 7; b++) {
+      graphics.minor[8].ellipse(a * 60 + random(120, 140), b * 60 + random(120, 140), random(120, 150));
     }
   }
 }
