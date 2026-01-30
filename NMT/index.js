@@ -1,5 +1,5 @@
 /* Main JS File */
-//Version 1.1.11
+//Version 1.2
 
 // //Game Stats
 // //Changeable Stats
@@ -50,7 +50,7 @@
 // Developer Stats
 let seedSlots = 5;//Default Number of Seed Slots
 let money = 1000;//In Game Currency
-let maxMoney = 10000000;//Max Money
+const maxMoney = 10000000;//Max Money
 
 //General Systems
 let screen = "initial";
@@ -206,7 +206,7 @@ function determineReward() {
 // Creates a survival level
 function createSurvivalLevel() {
   //Determine Level Length
-  let flagWaveCombo = [[1, 10], [2, 12], [2, 14], [2, 16], [3, 12], [3, 15], [3, 18], [4, 20]];
+  let flagWaveCombo = [[1, 10], [2, 12], [2, 14], [2, 16], [3, 12], [3, 15], [4, 16]];
   let randomCombo = flagWaveCombo[Math.floor(Math.random() * flagWaveCombo.length)];
   let numFlags = randomCombo[0];
   let numWaves = randomCombo[1];
@@ -310,7 +310,7 @@ function createSurvivalLevel() {
   return {
     type: [4, 15],
     daveSpeech: determinedSpeech,
-    startingSun: currentSurvivalNum * 150 - 50 > 6000 ? 6000 : currentSurvivalNum * 150 - 50,
+    startingSun: currentSurvivalNum * 150 > 9000 ? 9000 : currentSurvivalNum * 150,
     flag: flagArray,
     jams: jamArray,
     waveDelay: waveDelayArray,

@@ -2152,7 +2152,7 @@ class Zombie extends Entity {
         positionMultiplier = 2;
       }
       if (this.chillTimer > 0) {
-        chillMultiplier = 0.5;
+        chillMultiplier = 0.6;
       }
       switch (currentJam) {
         case 0://None
@@ -2394,14 +2394,14 @@ class Zombie extends Entity {
       }
     }
     //Collision with projectile
-    if (!((this.type === 20) && (this.eating === false) && (this.inJam()))) {//If not shadow zobmie during metal jam
+    if (!((this.type === 20) && (this.eating === false) && (this.inJam()))) {//If not shadow zombie during metal jam
       for (let currentProjectile of allProjectiles) {
         if ((this.x + 30 > currentProjectile.x) && (this.x < currentProjectile.x + 20) && (this.lane === currentProjectile.lane)
           && (currentProjectile.used === false) && (currentProjectile.toZombie === true)) {
           currentProjectile.used = true;
           //Punk Zombie and jam is on and not stunned (Coconuts are not counted)
           if ((this.type === 9) && (this.inJam()) && !(this.isStunned()) && (currentProjectile.type !== 9)) {
-            this.determineDamage(currentProjectile.damage, 0.2);//Punk takes 20% damage
+            this.determineDamage(currentProjectile.damage, 0.5);//Punk takes 50% damage
             new Projectile(currentProjectile.x, currentProjectile.y, currentProjectile.lane,
               currentProjectile.type, currentProjectile.damage, -1.5 * currentProjectile.speed, currentProjectile.tier, 0, false);//Send Projectile back
           } else {
